@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		5FCE23C91F0554D200B39D29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23C81F0554D200B39D29 /* AppDelegate.swift */; };
-		5FCE23CB1F0554D200B39D29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23CA1F0554D200B39D29 /* ViewController.swift */; };
+		5FCE23CB1F0554D200B39D29 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */; };
 		5FCE23CE1F0554D200B39D29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCE23CC1F0554D200B39D29 /* Main.storyboard */; };
 		5FCE23D01F0554D200B39D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCE23CF1F0554D200B39D29 /* Assets.xcassets */; };
 		5FCE23D31F0554D200B39D29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCE23D11F0554D200B39D29 /* LaunchScreen.storyboard */; };
+		5FCE23DB1F0556CB00B39D29 /* SDevCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23DA1F0556CB00B39D29 /* SDevCircleButton.swift */; };
+		5FCE23DD1F05572F00B39D29 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23DC1F05572F00B39D29 /* UIColor+.swift */; };
+		5FCE23DF1F056FB100B39D29 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23DE1F056FB100B39D29 /* ExportViewController.swift */; };
+		9F86A55F29B5DC6A124D78E8 /* Pods_Video_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91FA43278740EEF3185166E /* Pods_Video_Tuner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5FCE23C51F0554D200B39D29 /* Video Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCE23C81F0554D200B39D29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5FCE23CA1F0554D200B39D29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5FCE23CD1F0554D200B39D29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FCE23CF1F0554D200B39D29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FCE23D21F0554D200B39D29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FCE23D41F0554D200B39D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FCE23DA1F0556CB00B39D29 /* SDevCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDevCircleButton.swift; sourceTree = "<group>"; };
+		5FCE23DC1F05572F00B39D29 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		5FCE23DE1F056FB100B39D29 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
+		6158E8E6732EAF8C644CF8F4 /* Pods-Video Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video Tuner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Video Tuner/Pods-Video Tuner.release.xcconfig"; sourceTree = "<group>"; };
+		7372882EA31366D3BF6DF319 /* Pods-Video Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video Tuner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Video Tuner/Pods-Video Tuner.debug.xcconfig"; sourceTree = "<group>"; };
+		B91FA43278740EEF3185166E /* Pods_Video_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F86A55F29B5DC6A124D78E8 /* Pods_Video_Tuner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,8 @@
 			children = (
 				5FCE23C71F0554D200B39D29 /* Video Tuner */,
 				5FCE23C61F0554D200B39D29 /* Products */,
+				A2F3564CCF46BA1D013DAF5A /* Pods */,
+				9579C13E5832B087C0B35AE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +68,33 @@
 			isa = PBXGroup;
 			children = (
 				5FCE23C81F0554D200B39D29 /* AppDelegate.swift */,
-				5FCE23CA1F0554D200B39D29 /* ViewController.swift */,
+				5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */,
 				5FCE23CC1F0554D200B39D29 /* Main.storyboard */,
 				5FCE23CF1F0554D200B39D29 /* Assets.xcassets */,
 				5FCE23D11F0554D200B39D29 /* LaunchScreen.storyboard */,
 				5FCE23D41F0554D200B39D29 /* Info.plist */,
+				5FCE23DA1F0556CB00B39D29 /* SDevCircleButton.swift */,
+				5FCE23DC1F05572F00B39D29 /* UIColor+.swift */,
+				5FCE23DE1F056FB100B39D29 /* ExportViewController.swift */,
 			);
 			path = "Video Tuner";
+			sourceTree = "<group>";
+		};
+		9579C13E5832B087C0B35AE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B91FA43278740EEF3185166E /* Pods_Video_Tuner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2F3564CCF46BA1D013DAF5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7372882EA31366D3BF6DF319 /* Pods-Video Tuner.debug.xcconfig */,
+				6158E8E6732EAF8C644CF8F4 /* Pods-Video Tuner.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FCE23D71F0554D200B39D29 /* Build configuration list for PBXNativeTarget "Video Tuner" */;
 			buildPhases = (
+				7A2AFD40C2F03917003FD2F2 /* [CP] Check Pods Manifest.lock */,
 				5FCE23C11F0554D200B39D29 /* Sources */,
 				5FCE23C21F0554D200B39D29 /* Frameworks */,
 				5FCE23C31F0554D200B39D29 /* Resources */,
+				8830608E6698A8AE5E856BD2 /* [CP] Embed Pods Frameworks */,
+				FAD886E64D86CA45A72E5B51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,13 +168,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A2AFD40C2F03917003FD2F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8830608E6698A8AE5E856BD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Video Tuner/Pods-Video Tuner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAD886E64D86CA45A72E5B51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Video Tuner/Pods-Video Tuner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5FCE23C11F0554D200B39D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FCE23CB1F0554D200B39D29 /* ViewController.swift in Sources */,
+				5FCE23CB1F0554D200B39D29 /* CameraViewController.swift in Sources */,
+				5FCE23DD1F05572F00B39D29 /* UIColor+.swift in Sources */,
+				5FCE23DB1F0556CB00B39D29 /* SDevCircleButton.swift in Sources */,
 				5FCE23C91F0554D200B39D29 /* AppDelegate.swift in Sources */,
+				5FCE23DF1F056FB100B39D29 /* ExportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +348,7 @@
 		};
 		5FCE23D81F0554D200B39D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7372882EA31366D3BF6DF319 /* Pods-Video Tuner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
@@ -269,11 +357,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paubins.Video-Tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5FCE23D91F0554D200B39D29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6158E8E6732EAF8C644CF8F4 /* Pods-Video Tuner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
@@ -282,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paubins.Video-Tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -304,6 +395,7 @@
 				5FCE23D91F0554D200B39D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

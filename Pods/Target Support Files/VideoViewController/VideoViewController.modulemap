@@ -1,0 +1,6 @@
+framework module VideoViewController {
+  umbrella header "VideoViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

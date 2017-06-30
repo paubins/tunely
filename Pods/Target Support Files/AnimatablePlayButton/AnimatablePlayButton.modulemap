@@ -1,0 +1,6 @@
+framework module AnimatablePlayButton {
+  umbrella header "AnimatablePlayButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

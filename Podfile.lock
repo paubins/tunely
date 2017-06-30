@@ -1,0 +1,78 @@
+PODS:
+  - AHKBendableView (1.1)
+  - AnimatablePlayButton (1.0.0)
+  - Beethoven (3.0.1):
+    - Pitchy
+  - Cartography (1.1.0)
+  - DynamicButton (4.0.0)
+  - ElasticTransition (3.1.1):
+    - MotionAnimation (~> 0.1.2)
+  - FDWaveformView (2.2.0)
+  - Hue (2.0.1)
+  - LLSpinner (0.0.1)
+  - MotionAnimation (0.1.2)
+  - Overlap (0.4.0)
+  - Pitchy (2.0.1)
+  - Pulsator (0.3.0)
+  - RecordButton (1.0.2)
+  - SwiftyButton (0.6.0)
+  - SwiftyCam (2.3.0)
+  - VideoViewController (1.1)
+  - VIMVideoPlayer (6.0.1)
+
+DEPENDENCIES:
+  - AHKBendableView
+  - AnimatablePlayButton (from `https://github.com/paubins/AnimatablePlayButton`)
+  - Beethoven
+  - Cartography
+  - DynamicButton (~> 4.0.0)
+  - ElasticTransition
+  - FDWaveformView
+  - Hue
+  - LLSpinner
+  - Overlap
+  - Pulsator
+  - RecordButton
+  - SwiftyButton
+  - SwiftyCam (from `git@github.com:Awalz/SwiftyCam.git`, branch `2.4.0`)
+  - VideoViewController
+  - VIMVideoPlayer
+
+EXTERNAL SOURCES:
+  AnimatablePlayButton:
+    :git: https://github.com/paubins/AnimatablePlayButton
+  SwiftyCam:
+    :branch: 2.4.0
+    :git: git@github.com:Awalz/SwiftyCam.git
+
+CHECKOUT OPTIONS:
+  AnimatablePlayButton:
+    :commit: 380f6272e0b0262d475c6bc58755744d0aa3237b
+    :git: https://github.com/paubins/AnimatablePlayButton
+  SwiftyCam:
+    :commit: 9b8e7fd95131d98d145c956c925267c0a674d7bf
+    :git: git@github.com:Awalz/SwiftyCam.git
+
+SPEC CHECKSUMS:
+  AHKBendableView: ce81dc973f5e59367641e769404a9a8ad99f606e
+  AnimatablePlayButton: 529c208dc98499c8fcfca52fff26fee2316d3e82
+  Beethoven: 2530f27d1881f24f9e5d757aeb7f654b735f1080
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
+  DynamicButton: ddc1e8d79e37f2761ab64df0c02e89061b05d812
+  ElasticTransition: 6c4e4739e32480c864217db912100f3657f6447a
+  FDWaveformView: 21127c3dab35b522e87a799ec96fe3b4f868ab0e
+  Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
+  LLSpinner: 0ed607d59b3a447ddd157c29ef684de7a5a285ad
+  MotionAnimation: ff5c8fc2e429d7e10d46ae86819ba9759846c343
+  Overlap: 7c0520cb9110287643e8c64a7b36463e4e16d894
+  Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
+  Pulsator: 0191f14f7ab82d6dbde6fdbde42036f07a4450e3
+  RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
+  SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
+  SwiftyCam: e460d1b253d26fb12ed2f6a00aa42bcd1e39e751
+  VideoViewController: b251689d8b1cd51b65f718c9bc6109c02078e273
+  VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
+
+PODFILE CHECKSUM: 4d544184694e14c98453e40d8661a9905f04156b
+
+COCOAPODS: 1.2.0
