@@ -90,6 +90,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AHKBendableView/AHKBendableView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AMPopTip/AMPopTip.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AnimatablePlayButton/AnimatablePlayButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Beethoven/Beethoven.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
@@ -110,6 +111,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AHKBendableView/AHKBendableView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AMPopTip/AMPopTip.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AnimatablePlayButton/AnimatablePlayButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Beethoven/Beethoven.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"

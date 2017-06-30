@@ -16,6 +16,7 @@ import Hue
 import LLSpinner
 import RecordButton
 import ReplayKit
+import AMPopTip
 
 class CameraViewController : SwiftyCamViewController {
     
@@ -36,6 +37,10 @@ class CameraViewController : SwiftyCamViewController {
     var progressTimer : Timer!
     var progress : CGFloat! = 0
     var actualRecordButton:RecordButton!
+    
+    var firstTime:Bool = true
+    
+    var touchController:DazTouchController!
     
     var flipCameraButton:UIView = {
         let containerView = UIView(frame: .zero)
@@ -66,20 +71,25 @@ class CameraViewController : SwiftyCamViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.touchController = DazTouchController()
+        
+        self.view.addSubview(self.touchController.view)
+        
+        self.touchController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.touchController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        self.touchController.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.touchController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
         self.pinchToZoom = false
         self.swipeToZoom = true
         self.swipeToZoomInverted = true
         self.defaultCamera = .front
         self.videoGravity = .resizeAspectFill
         
-        let containerView = UIView(frame: .zero)
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerView.heightAnchor.constraint(equalToConstant: 220).isActive = true
-        containerView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        
         self.button1 = SDevCircleButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
         button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        self.view.addSubview(self.button1)
         
         let longPressGestureRecognizer:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(recordButtonWasTapped))
         longPressGestureRecognizer.minimumPressDuration = 0.1
@@ -99,10 +109,8 @@ class CameraViewController : SwiftyCamViewController {
         
         button1.backgroundColor = UIColor.red
         
-        containerView.addSubview(button1)
-        
-        button1.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        button1.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        button1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80).isActive = true
+        button1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         button1.heightAnchor.constraint(equalToConstant: 80).isActive = true
         button1.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -118,12 +126,7 @@ class CameraViewController : SwiftyCamViewController {
         
         self.flipCameraButton.heightAnchor.constraint(equalToConstant: 90).isActive = true
         self.flipCameraButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        
-        self.view.addSubview(containerView)
-        
-        containerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        containerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        
+
         actualRecordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
         self.view.addSubview(actualRecordButton)
         
@@ -146,9 +149,31 @@ class CameraViewController : SwiftyCamViewController {
         self.shouldUseDeviceOrientation = true
     }
     
+    let popTips:[PopTip] = {
+        var allPoptips:[PopTip] = []
+        let popTip = PopTip()
+        
+        allPoptips.append(popTip)
+
+        let popTip2 = PopTip()
+
+        allPoptips.append(popTip2)
+        
+        let popTip3 = PopTip()
+
+        allPoptips.append(popTip2)
+        
+        return allPoptips
+    }()
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.pitchEngine.start()
+        
+        if (self.firstTime) {
+            self.popTips.first?.show(text: "Tap me to start recording!", direction: .up,
+                                     maxWidth: 200, in: view, from: self.actualRecordButton.frame)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -167,7 +192,8 @@ class CameraViewController : SwiftyCamViewController {
     }
     
     func record() {
-        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self,
+                                                  selector: #selector(updateProgress), userInfo: nil, repeats: true)
         self.startVideoRecording()
     }
     
@@ -228,7 +254,18 @@ extension CameraViewController: PitchEngineDelegate {
         if(self.isVideoRecording) {
             self.recordButton.triggerAnimateTap()
             self.recordButton.backgroundColor = color
+            self.touchController.touch(atPosition: self.recordButton.frame.origin)
+            
+            for popTip in self.popTips {
+                popTip.hide()
+            }
+            
         } else {
+            if (self.firstTime) {
+                self.popTips[2].show(text: "This will show the note you're singing and change colors!", direction: .down, maxWidth: 200, in: view, from: self.button1.frame)
+                
+                self.firstTime = false
+            }
             self.recordButton.triggerAnimateTap()
         }
     }

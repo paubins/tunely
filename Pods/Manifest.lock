@@ -1,5 +1,6 @@
 PODS:
   - AHKBendableView (1.1)
+  - AMPopTip (2.1.5)
   - AnimatablePlayButton (1.0.0)
   - Beethoven (3.0.1):
     - Pitchy
@@ -22,6 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - AHKBendableView
+  - AMPopTip
   - AnimatablePlayButton (from `https://github.com/paubins/AnimatablePlayButton`)
   - Beethoven
   - Cartography
@@ -55,6 +57,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AHKBendableView: ce81dc973f5e59367641e769404a9a8ad99f606e
+  AMPopTip: 32d7a89af3d9e111c535ce397b9907ecb443dcd8
   AnimatablePlayButton: 529c208dc98499c8fcfca52fff26fee2316d3e82
   Beethoven: 2530f27d1881f24f9e5d757aeb7f654b735f1080
   Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
@@ -73,6 +76,6 @@ SPEC CHECKSUMS:
   VideoViewController: b251689d8b1cd51b65f718c9bc6109c02078e273
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 4d544184694e14c98453e40d8661a9905f04156b
+PODFILE CHECKSUM: b81c1d93d468ff773528059c340d21f8648ec54a
 
 COCOAPODS: 1.2.0

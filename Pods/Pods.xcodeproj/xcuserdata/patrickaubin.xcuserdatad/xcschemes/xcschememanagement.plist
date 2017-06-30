@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AMPopTip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AnimatablePlayButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,22 +107,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09FD231614F1B7F8691BF10A28673F21</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0CC358D7535493D9FC5BDC544964A853</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>100EAFCCC6E91DEC79D9911111EC3E1D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>23850BF27A5B83696AE8AED5E1CCF85B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,7 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2D218D025BD1609AA84FAADE7CAB86DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2D7588549C6AB894B52A616033E7687A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>349C7332321D4913AA51D6D1AD4E81EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46EBE1C02D5136F58159B4164F2396F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60B948F405DB58FE61ABAB4AAA9B863D</key>
+		<key>6BC3E8FBAD56AD03A1F952B604615D34</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BC3E8FBAD56AD03A1F952B604615D34</key>
+		<key>72A735641D23A2BE86ADE44E46BF911A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,22 +162,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>826F79C1711D48216F15D9EE9FA3B235</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>834193DB19169E710A43B70F3995806C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>936C5803415022E5EA68956EF689AC61</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE1EE1F8B508EA232ACE0672708C57BE</key>
+		<key>A406E78BB0A2D11548A4B5AB13C56142</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,12 +182,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C4B4AB26A510A4B61A1A526A2ADD27DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DA4F7A0E685C646D038E3BAF31DA699D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>ED347253791613F820AB764013457A24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5CB7A07255C69EE92B7CEAB55D4537C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9906BF9821A62481E7D329C2636086E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

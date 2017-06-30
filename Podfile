@@ -24,6 +24,7 @@ target 'Video Tuner' do
   pod "Pulsator"
   pod 'Overlap'
   pod "RecordButton"
+  pod 'AMPopTip'
 
 
 
