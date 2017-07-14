@@ -17,6 +17,8 @@ import LLSpinner
 import RecordButton
 import ReplayKit
 import AMPopTip
+import SwiftyStoreKit
+import Photos
 
 class CameraViewController : SwiftyCamViewController {
     
@@ -39,8 +41,40 @@ class CameraViewController : SwiftyCamViewController {
     var actualRecordButton:RecordButton!
     
     var firstTime:Bool = true
+    var horizontalHeightAnchor:NSLayoutConstraint!
+    
+    let screenRecorder:JKScreenRecorder = JKScreenRecorder()
     
     var touchController:DazTouchController!
+    var horizontalContactsController:MEVHorizontalContactsExample1 = MEVHorizontalContactsExample1(frame: .zero)
+    
+    var checkbox:UIView = {
+        let snapCheckbox = SnapchatCheckbox(frame: .zero)
+        snapCheckbox.translatesAutoresizingMaskIntoConstraints = false
+        snapCheckbox.addTarget(self, action: #selector(checkedBox), for: .touchUpInside)
+        
+        let containerView:UIView = UIView(frame: .zero)
+        containerView.addSubview(snapCheckbox)
+        containerView.isUserInteractionEnabled = true
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let label:UILabel = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Unchecked"
+        containerView.addSubview(label)
+        
+        snapCheckbox.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        snapCheckbox.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        
+        snapCheckbox.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        snapCheckbox.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        label.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        label.leftAnchor.constraint(equalTo: snapCheckbox.rightAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        
+        return containerView
+    }()
     
     var flipCameraButton:UIView = {
         let containerView = UIView(frame: .zero)
@@ -70,6 +104,8 @@ class CameraViewController : SwiftyCamViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.checkbox.isHidden = false
         
         self.touchController = DazTouchController()
         
@@ -119,7 +155,38 @@ class CameraViewController : SwiftyCamViewController {
         
         self.view.backgroundColor = UIColor.black
         
+        let showEffectsButton:PressableButton = PressableButton(frame: .zero)
+        showEffectsButton.translatesAutoresizingMaskIntoConstraints = false
+        showEffectsButton.colors = .init(button: UIColor(rgbColorCodeRed: 76, green: 76, blue: 147, alpha: 1.0),
+                                        shadow: UIColor.black)
+        showEffectsButton.shadowHeight = 10
+        
+        self.view.addSubview(showEffectsButton)
         self.view.addSubview(self.flipCameraButton)
+        self.view.addSubview(self.horizontalContactsController)
+        //self.view.addSubview(self.checkbox)
+        
+        self.horizontalContactsController.isHidden = false
+        
+        //self.checkbox.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        //self.checkbox.bottomAnchor.constraint(equalTo: self.horizontalContactsController.topAnchor).isActive = true
+        //self.checkbox.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        showEffectsButton.setTitle("Effects", for: .normal)
+        showEffectsButton.addTarget(self, action: #selector(showHideEffects), for: .touchUpInside)
+        showEffectsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        showEffectsButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        showEffectsButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        showEffectsButton.bottomAnchor.constraint(equalTo: self.horizontalContactsController.topAnchor).isActive = true
+        
+        showEffectsButton.isHidden = true
+        
+        self.horizontalContactsController.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.horizontalContactsController.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        self.horizontalContactsController.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        self.horizontalHeightAnchor = self.horizontalContactsController.heightAnchor.constraint(equalToConstant: 0)
+        self.horizontalHeightAnchor.isActive = true
         
         self.flipCameraButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         self.flipCameraButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -127,18 +194,17 @@ class CameraViewController : SwiftyCamViewController {
         self.flipCameraButton.heightAnchor.constraint(equalToConstant: 90).isActive = true
         self.flipCameraButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
 
-        actualRecordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        self.view.addSubview(actualRecordButton)
+        self.actualRecordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        self.view.addSubview(self.actualRecordButton)
+    
+        self.actualRecordButton.translatesAutoresizingMaskIntoConstraints = false
+        self.actualRecordButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.actualRecordButton.bottomAnchor.constraint(equalTo: self.horizontalContactsController.topAnchor, constant: -40).isActive = true
+        self.actualRecordButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        self.actualRecordButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        self.actualRecordButton.buttonColor = UIColor.red
         
-        actualRecordButton.translatesAutoresizingMaskIntoConstraints = false
-        actualRecordButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        actualRecordButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
-        actualRecordButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        actualRecordButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        actualRecordButton.buttonColor = UIColor.red
-        
-        actualRecordButton.addTarget(self, action: #selector(record), for: .touchDown)
-        actualRecordButton.addTarget(self, action: #selector(stop), for: .touchUpInside)
+        self.actualRecordButton.addTarget(self, action: #selector(record), for: .touchUpInside)
         
         self.allowBackgroundAudio = true
         self.lowLightBoost = true
@@ -187,14 +253,65 @@ class CameraViewController : SwiftyCamViewController {
         LLSpinner.stop()
     }
     
+    func showHideEffects() {
+        UIView.animate(withDuration: 1) {
+            if ( self.horizontalHeightAnchor.constant == 0) {
+                self.horizontalHeightAnchor.constant = 80
+            } else {
+                self.horizontalHeightAnchor.constant = 0
+            }
+        }
+    }
+    
+    func checkedBox() {
+        print("checked")
+    }
+    
     func flipCamera() {
         self.switchCamera()
     }
     
     func record() {
-        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self,
-                                                  selector: #selector(updateProgress), userInfo: nil, repeats: true)
-        self.startVideoRecording()
+        if (screenRecorder.recording) {
+            print("stopped")
+            // self.feedbackButton.isHidden = false
+            self.flipCameraButton.isHidden = false
+            
+            self.stop()
+            
+            LLSpinner.spin(style: .whiteLarge, backgroundColor: UIColor(white: 0, alpha: 0.6))
+            
+            self.checkPhotoLibraryPermission()
+            
+            self.screenRecorder.stopRecording { (viewController, videoPath, error) in
+                if ((videoPath) != nil) {
+                    UISaveVideoAtPathToSavedPhotosAlbum(videoPath!, self, nil, nil)
+                }
+                
+                LLSpinner.stop()
+                
+                self.present(viewController!, animated: true, completion: {
+                    print("Presented")
+                    
+                })
+            }
+        } else {
+            for popTip in self.popTips {
+                popTip.hide()
+            }
+            
+            self.screenRecorder.startRecording { (error) in
+                print(error?.localizedDescription ?? "error")
+                //self.player.playFromBeginning()
+                
+                self.flipCameraButton.isHidden = true
+                
+
+            }
+            
+            self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self,
+                                                      selector: #selector(self.updateProgress), userInfo: nil, repeats: true)
+        }
     }
     
     func updateProgress() {
@@ -202,13 +319,37 @@ class CameraViewController : SwiftyCamViewController {
         let maxDuration = CGFloat(5) // max duration of the recordButton
         
         progress = progress + (CGFloat(0.05) / maxDuration)
+        print(progress)
         actualRecordButton.setProgress(progress)
         
         if progress >= 1 {
-            self.stop()
+            //self.record()
         }
         
     }
+    
+    func checkPhotoLibraryPermission() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized: break
+        //handle authorized status
+        case .denied, .restricted : break
+        //handle denied status
+        case .notDetermined:
+            // ask for permissions
+            PHPhotoLibrary.requestAuthorization() { status in
+                switch status {
+                case .authorized: break
+                // as above
+                case .denied, .restricted: break
+                // as above
+                case .notDetermined: break
+                    // won't happen but still
+                }
+            }
+        }
+    }
+
     
     func stop() {
         progress = 0
@@ -219,6 +360,27 @@ class CameraViewController : SwiftyCamViewController {
     
     func recordButtonWasTapped(sender: UILongPressGestureRecognizer) {
 
+    }
+    
+    func makePurchase() {
+        SwiftyStoreKit.purchaseProduct("com.paubins.Video-Tuner.1", quantity: 1, atomically: true) { result in
+            switch result {
+            case .success(let purchase):
+                print("Purchase Success: \(purchase.productId)")
+            case .error(let error):
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+                }
+            }
+        }
     }
     
     func offsetColor(_ offsetPercentage: Double) -> UIColor {
@@ -251,7 +413,7 @@ extension CameraViewController: PitchEngineDelegate {
         
         let color = offsetColor(offsetPercentage)
         
-        if(self.isVideoRecording) {
+        if(self.screenRecorder.recording) {
             self.recordButton.triggerAnimateTap()
             self.recordButton.backgroundColor = color
             self.touchController.touch(atPosition: self.recordButton.frame.origin)

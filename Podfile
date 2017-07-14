@@ -25,6 +25,9 @@ target 'Video Tuner' do
   pod 'Overlap'
   pod "RecordButton"
   pod 'AMPopTip'
+  pod 'MEVHorizontalContacts'
+  pod 'SwiftyStoreKit'
+  pod 'CocoaLumberjack/Swift'
 
 
 

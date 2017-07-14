@@ -5,12 +5,16 @@ PODS:
   - Beethoven (3.0.1):
     - Pitchy
   - Cartography (1.1.0)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Swift (3.2.0):
+    - CocoaLumberjack/Default
   - DynamicButton (4.0.0)
   - ElasticTransition (3.1.1):
     - MotionAnimation (~> 0.1.2)
   - FDWaveformView (2.2.0)
   - Hue (2.0.1)
   - LLSpinner (0.0.1)
+  - MEVHorizontalContacts (1.4)
   - MotionAnimation (0.1.2)
   - Overlap (0.4.0)
   - Pitchy (2.0.1)
@@ -18,6 +22,7 @@ PODS:
   - RecordButton (1.0.2)
   - SwiftyButton (0.6.0)
   - SwiftyCam (2.3.0)
+  - SwiftyStoreKit (0.10.2)
   - VideoViewController (1.1)
   - VIMVideoPlayer (6.0.1)
 
@@ -27,16 +32,19 @@ DEPENDENCIES:
   - AnimatablePlayButton (from `https://github.com/paubins/AnimatablePlayButton`)
   - Beethoven
   - Cartography
+  - CocoaLumberjack/Swift
   - DynamicButton (~> 4.0.0)
   - ElasticTransition
   - FDWaveformView
   - Hue
   - LLSpinner
+  - MEVHorizontalContacts
   - Overlap
   - Pulsator
   - RecordButton
   - SwiftyButton
   - SwiftyCam (from `git@github.com:Awalz/SwiftyCam.git`, branch `2.4.0`)
+  - SwiftyStoreKit
   - VideoViewController
   - VIMVideoPlayer
 
@@ -60,22 +68,25 @@ SPEC CHECKSUMS:
   AMPopTip: 32d7a89af3d9e111c535ce397b9907ecb443dcd8
   AnimatablePlayButton: 529c208dc98499c8fcfca52fff26fee2316d3e82
   Beethoven: 2530f27d1881f24f9e5d757aeb7f654b735f1080
-  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
+  Cartography: '0538ccb4044acbbda2266335fc58cb4228794d90'
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   DynamicButton: ddc1e8d79e37f2761ab64df0c02e89061b05d812
   ElasticTransition: 6c4e4739e32480c864217db912100f3657f6447a
   FDWaveformView: 21127c3dab35b522e87a799ec96fe3b4f868ab0e
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   LLSpinner: 0ed607d59b3a447ddd157c29ef684de7a5a285ad
+  MEVHorizontalContacts: e92c4e06c08c38f557f4dc805af2b78b0198248e
   MotionAnimation: ff5c8fc2e429d7e10d46ae86819ba9759846c343
   Overlap: 7c0520cb9110287643e8c64a7b36463e4e16d894
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
-  Pulsator: 0191f14f7ab82d6dbde6fdbde42036f07a4450e3
+  Pulsator: '0191f14f7ab82d6dbde6fdbde42036f07a4450e3'
   RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
   SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
   SwiftyCam: e460d1b253d26fb12ed2f6a00aa42bcd1e39e751
+  SwiftyStoreKit: 2a2d776afd1f1427e64831c50b36b33d0f9a45f5
   VideoViewController: b251689d8b1cd51b65f718c9bc6109c02078e273
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: b81c1d93d468ff773528059c340d21f8648ec54a
+PODFILE CHECKSUM: ad84081d8125e180499ab2ffc66eb16231456ab1
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

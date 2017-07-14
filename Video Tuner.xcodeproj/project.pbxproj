@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FA20F4D1F06B880006E9076 /* MEVHorizontalContactsExample1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA20F4C1F06B880006E9076 /* MEVHorizontalContactsExample1.m */; };
+		5FA20F4F1F06BCB5006E9076 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA20F4E1F06BCB5006E9076 /* StoreKit.framework */; };
+		5FA20F511F06C1D0006E9076 /* SnapchatCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA20F501F06C1D0006E9076 /* SnapchatCheckbox.swift */; };
+		5FA770101F191E300022EC52 /* JKScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA7700F1F191E300022EC52 /* JKScreenRecorder.m */; };
 		5FCE23C91F0554D200B39D29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23C81F0554D200B39D29 /* AppDelegate.swift */; };
 		5FCE23CB1F0554D200B39D29 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */; };
 		5FCE23CE1F0554D200B39D29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCE23CC1F0554D200B39D29 /* Main.storyboard */; };
@@ -20,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FA20F4B1F06B880006E9076 /* MEVHorizontalContactsExample1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEVHorizontalContactsExample1.h; sourceTree = "<group>"; };
+		5FA20F4C1F06B880006E9076 /* MEVHorizontalContactsExample1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEVHorizontalContactsExample1.m; sourceTree = "<group>"; };
+		5FA20F4E1F06BCB5006E9076 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5FA20F501F06C1D0006E9076 /* SnapchatCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapchatCheckbox.swift; sourceTree = "<group>"; };
+		5FA7700E1F191E300022EC52 /* JKScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKScreenRecorder.h; sourceTree = "<group>"; };
+		5FA7700F1F191E300022EC52 /* JKScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKScreenRecorder.m; sourceTree = "<group>"; };
 		5FCE23C51F0554D200B39D29 /* Video Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCE23C81F0554D200B39D29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -44,15 +54,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F86A55F29B5DC6A124D78E8 /* Pods_Video_Tuner.framework in Frameworks */,
+				5FA20F4F1F06BCB5006E9076 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FA770111F191E340022EC52 /* Screen Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				5FA7700E1F191E300022EC52 /* JKScreenRecorder.h */,
+				5FA7700F1F191E300022EC52 /* JKScreenRecorder.m */,
+			);
+			name = "Screen Recorder";
+			sourceTree = "<group>";
+		};
 		5FCE23BC1F0554D200B39D29 = {
 			isa = PBXGroup;
 			children = (
+				5FA770111F191E340022EC52 /* Screen Recorder */,
 				5FCE23C71F0554D200B39D29 /* Video Tuner */,
 				5FCE23C61F0554D200B39D29 /* Products */,
 				A2F3564CCF46BA1D013DAF5A /* Pods */,
@@ -73,6 +94,7 @@
 			children = (
 				5FCE23EC1F06ABD500B39D29 /* DazTouchController.h */,
 				5FCE23ED1F06ABD500B39D29 /* DazTouchController.m */,
+				5FA20F501F06C1D0006E9076 /* SnapchatCheckbox.swift */,
 				5FCE23C81F0554D200B39D29 /* AppDelegate.swift */,
 				5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */,
 				5FCE23CC1F0554D200B39D29 /* Main.storyboard */,
@@ -82,6 +104,8 @@
 				5FCE23DA1F0556CB00B39D29 /* SDevCircleButton.swift */,
 				5FCE23DC1F05572F00B39D29 /* UIColor+.swift */,
 				5FCE23DE1F056FB100B39D29 /* ExportViewController.swift */,
+				5FA20F4B1F06B880006E9076 /* MEVHorizontalContactsExample1.h */,
+				5FA20F4C1F06B880006E9076 /* MEVHorizontalContactsExample1.m */,
 				5FCE23EF1F06AC0000B39D29 /* VideoTuner-Bridging-Header.h */,
 			);
 			path = "Video Tuner";
@@ -90,6 +114,7 @@
 		9579C13E5832B087C0B35AE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FA20F4E1F06BCB5006E9076 /* StoreKit.framework */,
 				B91FA43278740EEF3185166E /* Pods_Video_Tuner.framework */,
 			);
 			name = Frameworks;
@@ -142,6 +167,11 @@
 						DevelopmentTeam = 3XSPEUHQ6Y;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -189,7 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8830608E6698A8AE5E856BD2 /* [CP] Embed Pods Frameworks */ = {
@@ -229,12 +259,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA770101F191E300022EC52 /* JKScreenRecorder.m in Sources */,
 				5FCE23CB1F0554D200B39D29 /* CameraViewController.swift in Sources */,
 				5FCE23DD1F05572F00B39D29 /* UIColor+.swift in Sources */,
+				5FA20F511F06C1D0006E9076 /* SnapchatCheckbox.swift in Sources */,
 				5FCE23DB1F0556CB00B39D29 /* SDevCircleButton.swift in Sources */,
 				5FCE23EE1F06ABD500B39D29 /* DazTouchController.m in Sources */,
 				5FCE23C91F0554D200B39D29 /* AppDelegate.swift in Sources */,
 				5FCE23DF1F056FB100B39D29 /* ExportViewController.swift in Sources */,
+				5FA20F4D1F06B880006E9076 /* MEVHorizontalContactsExample1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +396,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
 				INFOPLIST_FILE = "Video Tuner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paubins.Video-Tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +415,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
 				INFOPLIST_FILE = "Video Tuner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paubins.Video-Tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
