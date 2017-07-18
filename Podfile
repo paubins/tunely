@@ -28,6 +28,8 @@ target 'Video Tuner' do
   pod 'MEVHorizontalContacts'
   pod 'SwiftyStoreKit'
   pod 'CocoaLumberjack/Swift'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 
 

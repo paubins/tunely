@@ -19,6 +19,7 @@ import ReplayKit
 import AMPopTip
 import SwiftyStoreKit
 import Photos
+import CocoaLumberjack
 
 class CameraViewController : SwiftyCamViewController {
     
@@ -38,7 +39,7 @@ class CameraViewController : SwiftyCamViewController {
     
     var progressTimer : Timer!
     var progress : CGFloat! = 0
-    var actualRecordButton:RecordButton!
+    var actualRecordButton:RecordingButton!
     
     var firstTime:Bool = true
     var horizontalHeightAnchor:NSLayoutConstraint!
@@ -47,6 +48,8 @@ class CameraViewController : SwiftyCamViewController {
     
     var touchController:DazTouchController!
     var horizontalContactsController:MEVHorizontalContactsExample1 = MEVHorizontalContactsExample1(frame: .zero)
+    
+    var stopped:Bool = false
     
     var checkbox:UIView = {
         let snapCheckbox = SnapchatCheckbox(frame: .zero)
@@ -102,8 +105,21 @@ class CameraViewController : SwiftyCamViewController {
         return containerView
     }()
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        videoGravity = .resizeAspectFill
+        defaultCamera = .front
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DDLogInfo("opened camera view")
         
         self.checkbox.isHidden = false
         
@@ -119,7 +135,7 @@ class CameraViewController : SwiftyCamViewController {
         self.pinchToZoom = false
         self.swipeToZoom = true
         self.swipeToZoomInverted = true
-        self.defaultCamera = .front
+        
         self.videoGravity = .resizeAspectFill
         
         self.button1 = SDevCircleButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
@@ -189,12 +205,16 @@ class CameraViewController : SwiftyCamViewController {
         self.horizontalHeightAnchor.isActive = true
         
         self.flipCameraButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        self.flipCameraButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.flipCameraButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
         
         self.flipCameraButton.heightAnchor.constraint(equalToConstant: 90).isActive = true
         self.flipCameraButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
 
-        self.actualRecordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        self.actualRecordButton = RecordingButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        
+        self.actualRecordButton.recordingDuration = 60
+        self.actualRecordButton.delegate = self
+        
         self.view.addSubview(self.actualRecordButton)
     
         self.actualRecordButton.translatesAutoresizingMaskIntoConstraints = false
@@ -202,7 +222,7 @@ class CameraViewController : SwiftyCamViewController {
         self.actualRecordButton.bottomAnchor.constraint(equalTo: self.horizontalContactsController.topAnchor, constant: -40).isActive = true
         self.actualRecordButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         self.actualRecordButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        self.actualRecordButton.buttonColor = UIColor.red
+//        self.actualRecordButton.buttonColor = UIColor.red
         
         self.actualRecordButton.addTarget(self, action: #selector(record), for: .touchUpInside)
         
@@ -235,7 +255,6 @@ class CameraViewController : SwiftyCamViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.pitchEngine.start()
-        
         if (self.firstTime) {
             self.popTips.first?.show(text: "Tap me to start recording!", direction: .up,
                                      maxWidth: 200, in: view, from: self.actualRecordButton.frame)
@@ -272,15 +291,19 @@ class CameraViewController : SwiftyCamViewController {
     }
     
     func record() {
+        DDLogInfo("record button tapped")
         if (screenRecorder.recording) {
             print("stopped")
             // self.feedbackButton.isHidden = false
             self.flipCameraButton.isHidden = false
             
+            if (!self.stopped) {
+                self.actualRecordButton.stopRecord()
+            }
+            
+            self.stopped = false
+            
             self.stop()
-            
-            LLSpinner.spin(style: .whiteLarge, backgroundColor: UIColor(white: 0, alpha: 0.6))
-            
             self.checkPhotoLibraryPermission()
             
             self.screenRecorder.stopRecording { (viewController, videoPath, error) in
@@ -289,46 +312,30 @@ class CameraViewController : SwiftyCamViewController {
                 }
                 
                 LLSpinner.stop()
+                viewController?.modalPresentationStyle = .fullScreen
                 
                 self.present(viewController!, animated: true, completion: {
-                    print("Presented")
-                    
+                    DDLogInfo("showed completed recording")
                 })
             }
+            
+            LLSpinner.spin(style: .whiteLarge, backgroundColor: UIColor(white: 0, alpha: 0.6))
         } else {
             for popTip in self.popTips {
                 popTip.hide()
             }
+            self.actualRecordButton.record()
+            self.flipCameraButton.isHidden = true
             
             self.screenRecorder.startRecording { (error) in
                 print(error?.localizedDescription ?? "error")
-                //self.player.playFromBeginning()
-                
-                self.flipCameraButton.isHidden = true
-                
-
+                self.actualRecordButton.endProgressValue = 0.0
             }
-            
-            self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self,
-                                                      selector: #selector(self.updateProgress), userInfo: nil, repeats: true)
         }
-    }
-    
-    func updateProgress() {
-        
-        let maxDuration = CGFloat(5) // max duration of the recordButton
-        
-        progress = progress + (CGFloat(0.05) / maxDuration)
-        print(progress)
-        actualRecordButton.setProgress(progress)
-        
-        if progress >= 1 {
-            //self.record()
-        }
-        
     }
     
     func checkPhotoLibraryPermission() {
+        DDLogInfo("check photo library permissions")
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .authorized: break
@@ -352,9 +359,6 @@ class CameraViewController : SwiftyCamViewController {
 
     
     func stop() {
-        progress = 0
-        actualRecordButton.setProgress(progress)
-        self.progressTimer.invalidate()
         self.stopVideoRecording()
     }
     
@@ -546,3 +550,14 @@ extension CameraViewController : SwiftyCamViewControllerDelegate {
     }
 }
 
+extension CameraViewController : RecordingButtonDelegate {
+    // RecordingButtonDelegate Methods
+    func didStartCapture() {
+        // call when capturing starts.
+    }
+    
+    func didEndCapture() {
+        self.stopped = true
+        self.record()
+    }
+}

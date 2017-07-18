@@ -7,3 +7,4 @@
 #import "DazTouchController.h"
 #import "MEVHorizontalContactsExample1.h"
 #import "JKScreenRecorder.h"
+#import "Glimpse.h"

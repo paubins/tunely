@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F8AFC981F1D1FC800310367 /* RecordingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AFC971F1D1FC800310367 /* RecordingButton.swift */; };
+		5F9506711F1EA38A00DD76C3 /* Glimpse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95066C1F1EA38A00DD76C3 /* Glimpse.m */; };
+		5F9506721F1EA38A00DD76C3 /* GlimpseAssetWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95066E1F1EA38A00DD76C3 /* GlimpseAssetWriter.m */; };
 		5FA20F4D1F06B880006E9076 /* MEVHorizontalContactsExample1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA20F4C1F06B880006E9076 /* MEVHorizontalContactsExample1.m */; };
 		5FA20F4F1F06BCB5006E9076 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA20F4E1F06BCB5006E9076 /* StoreKit.framework */; };
 		5FA20F511F06C1D0006E9076 /* SnapchatCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA20F501F06C1D0006E9076 /* SnapchatCheckbox.swift */; };
@@ -24,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F8AFC971F1D1FC800310367 /* RecordingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingButton.swift; sourceTree = "<group>"; };
+		5F95066A1F1EA38A00DD76C3 /* Glimpse-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Glimpse-Prefix.pch"; sourceTree = "<group>"; };
+		5F95066B1F1EA38A00DD76C3 /* Glimpse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glimpse.h; sourceTree = "<group>"; };
+		5F95066C1F1EA38A00DD76C3 /* Glimpse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glimpse.m; sourceTree = "<group>"; };
+		5F95066D1F1EA38A00DD76C3 /* GlimpseAssetWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlimpseAssetWriter.h; sourceTree = "<group>"; };
+		5F95066E1F1EA38A00DD76C3 /* GlimpseAssetWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlimpseAssetWriter.m; sourceTree = "<group>"; };
 		5FA20F4B1F06B880006E9076 /* MEVHorizontalContactsExample1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEVHorizontalContactsExample1.h; sourceTree = "<group>"; };
 		5FA20F4C1F06B880006E9076 /* MEVHorizontalContactsExample1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEVHorizontalContactsExample1.m; sourceTree = "<group>"; };
 		5FA20F4E1F06BCB5006E9076 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -61,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F9506691F1EA38A00DD76C3 /* Glimpse */ = {
+			isa = PBXGroup;
+			children = (
+				5F95066A1F1EA38A00DD76C3 /* Glimpse-Prefix.pch */,
+				5F95066B1F1EA38A00DD76C3 /* Glimpse.h */,
+				5F95066C1F1EA38A00DD76C3 /* Glimpse.m */,
+				5F95066D1F1EA38A00DD76C3 /* GlimpseAssetWriter.h */,
+				5F95066E1F1EA38A00DD76C3 /* GlimpseAssetWriter.m */,
+			);
+			path = Glimpse;
+			sourceTree = "<group>";
+		};
 		5FA770111F191E340022EC52 /* Screen Recorder */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +94,7 @@
 		5FCE23BC1F0554D200B39D29 = {
 			isa = PBXGroup;
 			children = (
+				5F9506691F1EA38A00DD76C3 /* Glimpse */,
 				5FA770111F191E340022EC52 /* Screen Recorder */,
 				5FCE23C71F0554D200B39D29 /* Video Tuner */,
 				5FCE23C61F0554D200B39D29 /* Products */,
@@ -96,6 +118,7 @@
 				5FCE23ED1F06ABD500B39D29 /* DazTouchController.m */,
 				5FA20F501F06C1D0006E9076 /* SnapchatCheckbox.swift */,
 				5FCE23C81F0554D200B39D29 /* AppDelegate.swift */,
+				5F8AFC971F1D1FC800310367 /* RecordingButton.swift */,
 				5FCE23CA1F0554D200B39D29 /* CameraViewController.swift */,
 				5FCE23CC1F0554D200B39D29 /* Main.storyboard */,
 				5FCE23CF1F0554D200B39D29 /* Assets.xcassets */,
@@ -142,6 +165,7 @@
 				5FCE23C31F0554D200B39D29 /* Resources */,
 				8830608E6698A8AE5E856BD2 /* [CP] Embed Pods Frameworks */,
 				FAD886E64D86CA45A72E5B51 /* [CP] Copy Pods Resources */,
+				5F8AFC991F1D225600310367 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,6 +231,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5F8AFC991F1D225600310367 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 73cc3f18e2d9e92dd6e8d0333ed9139f94b28f7b 92249bff823b6e77f03ba6ca66ef011f96af74be0e8e24f9cf4bbddf467dd039";
+		};
 		7A2AFD40C2F03917003FD2F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,12 +297,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FA770101F191E300022EC52 /* JKScreenRecorder.m in Sources */,
+				5F8AFC981F1D1FC800310367 /* RecordingButton.swift in Sources */,
 				5FCE23CB1F0554D200B39D29 /* CameraViewController.swift in Sources */,
 				5FCE23DD1F05572F00B39D29 /* UIColor+.swift in Sources */,
 				5FA20F511F06C1D0006E9076 /* SnapchatCheckbox.swift in Sources */,
+				5F9506711F1EA38A00DD76C3 /* Glimpse.m in Sources */,
 				5FCE23DB1F0556CB00B39D29 /* SDevCircleButton.swift in Sources */,
 				5FCE23EE1F06ABD500B39D29 /* DazTouchController.m in Sources */,
 				5FCE23C91F0554D200B39D29 /* AppDelegate.swift in Sources */,
+				5F9506721F1EA38A00DD76C3 /* GlimpseAssetWriter.m in Sources */,
 				5FCE23DF1F056FB100B39D29 /* ExportViewController.swift in Sources */,
 				5FA20F4D1F06B880006E9076 /* MEVHorizontalContactsExample1.m in Sources */,
 			);
@@ -396,14 +436,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
 				INFOPLIST_FILE = "Video Tuner/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paubins.Video-Tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Video Tuner/VideoTuner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -415,13 +455,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3XSPEUHQ6Y;
 				INFOPLIST_FILE = "Video Tuner/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paubins.Video-Tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Video Tuner/VideoTuner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

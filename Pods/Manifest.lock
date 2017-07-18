@@ -8,9 +8,12 @@ PODS:
   - CocoaLumberjack/Default (3.2.0)
   - CocoaLumberjack/Swift (3.2.0):
     - CocoaLumberjack/Default
+  - Crashlytics (3.8.5):
+    - Fabric (~> 1.6.3)
   - DynamicButton (4.0.0)
   - ElasticTransition (3.1.1):
     - MotionAnimation (~> 0.1.2)
+  - Fabric (1.6.12)
   - FDWaveformView (2.2.0)
   - Hue (2.0.1)
   - LLSpinner (0.0.1)
@@ -33,8 +36,10 @@ DEPENDENCIES:
   - Beethoven
   - Cartography
   - CocoaLumberjack/Swift
+  - Crashlytics
   - DynamicButton (~> 4.0.0)
   - ElasticTransition
+  - Fabric
   - FDWaveformView
   - Hue
   - LLSpinner
@@ -68,10 +73,12 @@ SPEC CHECKSUMS:
   AMPopTip: 32d7a89af3d9e111c535ce397b9907ecb443dcd8
   AnimatablePlayButton: 529c208dc98499c8fcfca52fff26fee2316d3e82
   Beethoven: 2530f27d1881f24f9e5d757aeb7f654b735f1080
-  Cartography: '0538ccb4044acbbda2266335fc58cb4228794d90'
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   DynamicButton: ddc1e8d79e37f2761ab64df0c02e89061b05d812
   ElasticTransition: 6c4e4739e32480c864217db912100f3657f6447a
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   FDWaveformView: 21127c3dab35b522e87a799ec96fe3b4f868ab0e
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   LLSpinner: 0ed607d59b3a447ddd157c29ef684de7a5a285ad
@@ -79,7 +86,7 @@ SPEC CHECKSUMS:
   MotionAnimation: ff5c8fc2e429d7e10d46ae86819ba9759846c343
   Overlap: 7c0520cb9110287643e8c64a7b36463e4e16d894
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
-  Pulsator: '0191f14f7ab82d6dbde6fdbde42036f07a4450e3'
+  Pulsator: 0191f14f7ab82d6dbde6fdbde42036f07a4450e3
   RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
   SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
   SwiftyCam: e460d1b253d26fb12ed2f6a00aa42bcd1e39e751
@@ -87,6 +94,6 @@ SPEC CHECKSUMS:
   VideoViewController: b251689d8b1cd51b65f718c9bc6109c02078e273
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: ad84081d8125e180499ab2ffc66eb16231456ab1
+PODFILE CHECKSUM: efd40844ddb8eca570ebad3c3282b3058d302d40
 
 COCOAPODS: 1.2.1

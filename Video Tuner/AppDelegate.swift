@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let navigationController:UINavigationController = UINavigationController()
+    let fileLogger: DDFileLogger = DDFileLogger() // File Logger
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Crashlytics.self])
+        
+        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
+        
+        fileLogger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.add(fileLogger)
+        
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
